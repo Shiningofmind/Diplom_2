@@ -32,3 +32,8 @@ class CreateUser:
 
         response = requests.post(API_ENDPOINTS["create_user"], json=payload)
         return response
+
+    def delete_user(self, token):
+
+        response = requests.delete(API_ENDPOINTS["delete_user"], headers={'Authorization': token})
+        return response

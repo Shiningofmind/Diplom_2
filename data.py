@@ -4,8 +4,10 @@ API_ENDPOINTS = {
     "create_user": f"{BASE_URL}/api/auth/register",
     "login": f"{BASE_URL}/api/auth/login",
     "changing_user_data": f"{BASE_URL}/api/auth/user",
-    "receiving_orders": f"{BASE_URL}/api/orders"
+    "receiving_orders": f"{BASE_URL}/api/orders",
+    "delete_user": f"{BASE_URL}/api/auth/user"
 }
+
 ingredient1 = "61c0c5a71d1f82001bdaaa6c"
 ingredient2 = "61c0c5a71d1f82001bdaaa70"
 EXISTED_PAYLOAD = {
@@ -33,3 +35,21 @@ LOGIN_ERROR_RESPONSE = {
             "success": False,
             "message": "email or password are incorrect"
         }
+
+MISSING_FIELDS_ERROR_RESPONS = {
+            "success": False,
+            "message": "Email, password and name are required fields"
+        }
+
+INTERNAL_SERVER_ERROR_RESPONSE = """\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Internal Server Error</pre>
+</body>
+</html>
+"""
